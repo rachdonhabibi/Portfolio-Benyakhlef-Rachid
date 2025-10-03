@@ -51,7 +51,7 @@ const projects = [
 		id: 4,
 		title: "Sentiment Analysis Pipeline – NLP & BERT",
 		description:
-			"A complete pipeline for sentiment analysis using tweets from X (formerly Twitter). The project combines data cleaning, visualization, and classification using ML, DL, and BERT models to extract insights and predict sentiment trends.",
+			"A study comparing sentiment analysis techniques on English tweets, integrating data cleaning, visualization, and predictive modeling. It contrasts machine learning, deep learning, and BERT approaches to classify sentiment trends and extract insights.",
 		image: "/projects/sentiment.png",
 		tags: [
 			"Python",
