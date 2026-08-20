@@ -1,40 +1,67 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-const categories = ["Data Engineering", "Business Intelligence", "Cloud & Big Data", "Machine Learning", "Tools"];
+const categories = [
+  "Data Engineering",
+  "Big Data",
+  "Cloud (GCP)",
+  "Databases",
+  "BI & Visualization",
+  "Machine Learning",
+];
 
 const skills = [
   // Data Engineering
-  { name: "Python (Pandas, BeautifulSoup, Selenium)", level: 90, category: "Data Engineering" },
-  { name: "ETL (Extract, Transform, Load)", level: 85, category: "Data Engineering" },
-  { name: "Airflow (DAGs, Scheduling)", level: 80, category: "Data Engineering" },
-  { name: "SSIS / SSAS / SSRS", level: 75, category: "Data Engineering" },
-  { name: "Web Scraping", level: 75, category: "Data Engineering" },
-  { name: "GCP (BigQuery, GCS, Cloud Run, Workflows)", level: 80, category: "Data Engineering" },
-  { name: "Terraform", level: 75, category: "Data Engineering" },
+  { name: "SQL (T-SQL, BigQuery SQL, PostgreSQL)", level: 95, category: "Data Engineering" },
+  { name: "Python (pandas, PySpark)", level: 90, category: "Data Engineering" },
+  { name: "ELT / Medallion Architecture", level: 88, category: "Data Engineering" },
+  { name: "Airflow (DAGs, Scheduling)", level: 85, category: "Data Engineering" },
+  { name: "Terraform (IaC)", level: 85, category: "Data Engineering" },
+  { name: "Docker", level: 82, category: "Data Engineering" },
+  { name: "CI/CD (Cloud Build)", level: 80, category: "Data Engineering" },
+  { name: "SSIS / SSAS / SSRS", level: 80, category: "Data Engineering" },
+  { name: "Git / GitHub", level: 85, category: "Data Engineering" },
+  { name: "Parquet", level: 78, category: "Data Engineering" },
+  { name: "Java / Scala", level: 70, category: "Data Engineering" },
 
-  // Business Intelligence
-  { name: "Power BI", level: 90, category: "Business Intelligence" },
-  { name: "Cognos Analytics", level: 80, category: "Business Intelligence" },
-  { name: "Looker (LookML, Dashboards)", level: 80, category: "Business Intelligence" },
+  // Big Data
+  { name: "PySpark (RDD, DataFrames, Spark SQL)", level: 85, category: "Big Data" },
+  { name: "Spark Structured Streaming", level: 80, category: "Big Data" },
+  { name: "Kafka", level: 80, category: "Big Data" },
+  { name: "Hadoop / HDFS / YARN", level: 75, category: "Big Data" },
+  { name: "Spark MLlib", level: 70, category: "Big Data" },
+  { name: "Logstash", level: 70, category: "Big Data" },
 
-  // Cloud & Big Data
-  { name: "AWS (S3, Cloud Services)", level: 65, category: "Cloud & Big Data" },
-  { name: "GCP (BigQuery, GCS, Cloud Run, Workflows)", level: 80, category: "Cloud & Big Data" },
-  { name: "MongoDB", level: 70, category: "Cloud & Big Data" },
-  { name: "Cassandra", level: 65, category: "Cloud & Big Data" },
+  // Cloud (GCP)
+  { name: "BigQuery (partitioning, clustering, MERGE)", level: 92, category: "Cloud (GCP)" },
+  { name: "Cloud Workflows / Cloud Run", level: 85, category: "Cloud (GCP)" },
+  { name: "Terraform (IaC)", level: 85, category: "Cloud (GCP)" },
+  { name: "Looker", level: 85, category: "Cloud (GCP)" },
+  { name: "Cloud Build (CI/CD)", level: 80, category: "Cloud (GCP)" },
+  { name: "Dataproc", level: 75, category: "Cloud (GCP)" },
+  { name: "Pub/Sub", level: 75, category: "Cloud (GCP)" },
+
+  // Databases
+  { name: "SQL Server (T-SQL)", level: 88, category: "Databases" },
+  { name: "PostgreSQL", level: 85, category: "Databases" },
+  { name: "MySQL", level: 78, category: "Databases" },
+  { name: "Elasticsearch", level: 75, category: "Databases" },
+  { name: "MongoDB", level: 75, category: "Databases" },
+  { name: "Cassandra", level: 65, category: "Databases" },
+
+  // BI & Visualization
+  { name: "Looker / LookML", level: 88, category: "BI & Visualization" },
+  { name: "Power BI (DAX)", level: 88, category: "BI & Visualization" },
+  { name: "Dimensional Modeling (Star Schema)", level: 85, category: "BI & Visualization" },
+  { name: "SSAS (OLAP Cubes)", level: 78, category: "BI & Visualization" },
+  { name: "Kibana", level: 75, category: "BI & Visualization" },
 
   // Machine Learning
   { name: "Scikit-learn", level: 75, category: "Machine Learning" },
   { name: "PyTorch", level: 70, category: "Machine Learning" },
-  { name: "NLP (BERT, SVM, CNN, LSTM, GRU)", level: 70, category: "Machine Learning" },
-
-  // Tools
-  { name: "Docker", level: 80, category: "Tools" },
-  { name: "Git/GitHub", level: 85, category: "Tools" },
-  { name: "VS Code", level: 90, category: "Tools" },
-  { name: "C", level: 80, category: "Tools" },
+  { name: "NLP (BERT, Transformers)", level: 70, category: "Machine Learning" },
 ];
+
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("Data Engineering");
 
@@ -57,7 +84,7 @@ export const SkillsSection = () => {
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-forefround hover:bd-secondary"
+                  : "bg-secondary/70 text-foreground hover:bg-secondary"
               )}
             >
               {category}

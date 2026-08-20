@@ -9,7 +9,7 @@ export const HeroSection = () => {
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
+            <span className="opacity-0 animate-fade-in"> Hi, I&apos;m</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
               Rachid
@@ -20,8 +20,15 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I am a student at ENSIAS (National School of Computer Science and Systems Analysis) with experience in two companies and practical involvement in several labs and projects. I am currently seeking an end-of-studies internship (PFE) in Data Engineering and Big Data
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+            Data Engineer, Master of Science (M.Sc.) in Business Intelligence &
+            Analytics — ENSIAS. I build end-to-end data platforms: advanced SQL
+            and cloud warehouse modeling up to the business semantic layer,
+            along with real-time
+            ingestion using Kafka and Spark Streaming. I led the redesign and
+            migration of the legacy BI stack of Altice Portugal (MEO) to Google
+            Cloud. I am currently looking for a Data Engineer role focused on
+            cloud platforms and data warehousing.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">

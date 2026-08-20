@@ -1,10 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/catana.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rachid Portfolio</title>
+    <title>Rachid Benyakhlef — Data Engineer</title>
+    <meta
+      name="description"
+      content="Data Engineer, M.Sc. in Business Intelligence &amp; Analytics — ENSIAS. Cloud data warehousing on GCP/BigQuery, ELT and orchestration, Spark and Kafka streaming, Looker and Power BI."
+    />
+    <meta name="author" content="Rachid Benyakhlef" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://benyakhlefrachid.vercel.app/" />
+    <meta property="og:title" content="Rachid Benyakhlef — Data Engineer" />
+    <meta
+      property="og:description"
+      content="Data Engineer, M.Sc. in Business Intelligence &amp; Analytics — ENSIAS. Cloud data warehousing on GCP/BigQuery, ELT and orchestration, Spark and Kafka streaming, Looker and Power BI."
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Rachid Benyakhlef — Data Engineer" />
+    <meta
+      name="twitter:description"
+      content="Data Engineer, M.Sc. in Business Intelligence &amp; Analytics — ENSIAS. Cloud data warehousing on GCP/BigQuery, ELT and orchestration, Spark and Kafka streaming, Looker and Power BI."
+    />
+    <script>
+      // Applied before first paint so the dark default never flashes white.
+      (function () {
+        try {
+          if (localStorage.getItem("theme-preference") === "light") {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
